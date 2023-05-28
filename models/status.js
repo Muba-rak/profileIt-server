@@ -41,6 +41,14 @@ const postSchema = new Schema(
       type: Number,
       required: [true, "Please enter your height"],
     },
+    skills: {
+      type: String,
+      required: [true, "Please enter your skills"],
+    },
+    nationality: {
+      type: String,
+      required: [true, "Please enter your Nationality"],
+    },
     dob: {
       type: Date,
       required: [true, "Enter your date of birth"],
