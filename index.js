@@ -8,6 +8,7 @@ mongoose.set("strictQuery", true);
 const auth = require("./middleware/auth");
 const userRouter = require("./routes/user");
 const statusRouter = require("./routes/status");
+const assignmentRouter = require("./routes/assignmentRouter");
 const User = require("./models/user");
 
 //middleware
@@ -22,6 +23,7 @@ app.get("/api/v1/user", auth, async (req, res) => {
   res.status(200).json({ email: user.email, status: user.status });
 });
 app.use("/api/v1", auth, statusRouter);
+app.use("/api/v1", auth, assignmentRouter);
 
 app.use((req, res) => {
   res.send("route not found");
